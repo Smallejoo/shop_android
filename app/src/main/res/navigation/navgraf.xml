@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraf"
+    app:startDestination="@id/log_In_reg">
+
+    <fragment
+        android:id="@+id/log_In_reg"
+        android:name="com.example.myapplication.fragments.Log_In_reg"
+        android:label="fragment_log__in_reg"
+        tools:layout="@layout/fragment_log__in_reg" >
+        <action
+            android:id="@+id/action_log_In_reg_to_theShop"
+            app:destination="@id/theShop" />
+        <action
+            android:id="@+id/action_log_In_reg_to_register"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.myapplication.fragments.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_log_In_reg"
+            app:destination="@id/log_In_reg" />
+    </fragment>
+    <fragment
+        android:id="@+id/theShop"
+        android:name="com.example.myapplication.fragments.TheShop"
+        android:label="fragment_the_shop"
+        tools:layout="@layout/fragment_the_shop" >
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_theShop_to_log_In_reg"
+            app:destination="@id/log_In_reg" />
+        <action
+            android:id="@+id/action_theShop_to_cart"
+            app:destination="@id/cart" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.example.myapplication.fragments.Cart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_theShop"
+            app:destination="@id/theShop" />
+    </fragment>
+</navigation>
